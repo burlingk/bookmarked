@@ -22,10 +22,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'c&h*@u1)r#i4^s@2v9qxc$$-!q0-(l=uijfd3vhc8j3)@w&dbk'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+#Auth stuff
+AUTH_USER_MODEL = 'users.User'
 
 
 # Application definition
@@ -37,6 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	'django_extensions',
+	'loginas',
+	'users',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,9 @@ ROOT_URLCONF = 'bookmarked.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+			BASE_DIR+'/bookmarked/templates',
+		],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,13 +76,7 @@ WSGI_APPLICATION = 'bookmarked.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
+# Provided by localdb
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -118,3 +115,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = BASE_DIR+'/static/'
+
+STATICFILES_DIRS = [
+	'bookmarked/static',
+]
+
+#
+# The line bellow imports the settings related to the database and allowed hosts.
+# These settings will vary between environments.  Eventually, for security reasons, various other settings will move to another location as well.
+#
+from localdb import *
+
+
+#Local Configs
+LOGIN_REDIRECT_URL = 'index'  #This will change.
