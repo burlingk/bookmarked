@@ -3,7 +3,7 @@ from django.conf import settings
 
 # Create your models here.
 class Bookmark(models.Model):
-	user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE) # Who owns the object
+	user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE) # Who owns the object
 	url = models.SlugField(max_length=100, unique=True)                             # 
 	slug = models.SlugField(max_length=100)
 	site = models.CharField(max_length=2000)
