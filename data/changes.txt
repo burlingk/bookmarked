@@ -1,3 +1,11 @@
 ﻿11 February 2018:
 * Project initiated.
 
+
+13 February 2018:
+* Initial working version in place.
+* bookmarks app created.
+* Bookmark class created taking a site and a label/slug.
+* bookmarks.views.go_to_site created to redirect to the site.
+
+

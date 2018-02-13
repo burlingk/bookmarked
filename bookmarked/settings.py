@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 	'django_extensions',
 	'loginas',
 	'users',
+	'bookmarks',
 ]
 
 MIDDLEWARE = [
