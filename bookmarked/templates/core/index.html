@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>Bookmarked Sites</title>
+	</head>
+	
+	<body>
+		<div>
+			You seem to have come here by accident.  You were likely looking for one of the links below.		
+		</div>
+		
+		<ul>
+			{% for bookmark in bookmarks %}
+				<li><a href="{{bookmark.get_absolute_url}}">{{bookmark.url}}</a></li>		
+			{% endfor %}
+		</ul>	
+	</body>
+</html>

@@ -17,5 +17,6 @@ from django.urls import path
 from . import views as bookmark_views
 
 urlpatterns = [
+	path('', bookmark_views.index_view, name='index'),
 	path('<slug:site_slug>', bookmark_views.go_to_site),
 ]

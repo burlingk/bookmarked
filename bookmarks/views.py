@@ -17,5 +17,11 @@ def go_to_site(request, site_slug):
 		else:
 			return  HttpResponseNotFound('<h1>The site ('+site_slug+') is not in our database!</h1>')
 
+def index_view(request):
+	bookmarks = Bookmark.objects.all()
+	return render(request, 'core/index.html', {'bookmarks':bookmarks})
+
+
+
 
 

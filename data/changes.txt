@@ -1,11 +1,17 @@
-﻿11 February 2018:
-* Project initiated.
-
+﻿
+15 February 2018:
+* Created a default index page that displays if no bookmark is chosen.
+  For now, it just shows a list of existing bookmarks.  Eventually, that
+  might not be what we want, but it works for now.
 
 13 February 2018:
 * Initial working version in place.
 * bookmarks app created.
 * Bookmark class created taking a site and a label/slug.
 * bookmarks.views.go_to_site created to redirect to the site.
+
+11 February 2018:
+* Project initiated.
+
 
 
